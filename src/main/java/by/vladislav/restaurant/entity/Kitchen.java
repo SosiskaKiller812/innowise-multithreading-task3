@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 
 public class Kitchen {
   private static final Logger logger = LoggerFactory.getLogger(Kitchen.class);
-  private int dishesCount;
   private final Lock lock = new ReentrantLock();
   private final Condition dishesAvailable = lock.newCondition();
+  private int dishesCount;
 
   public Kitchen(int initialDishes) {
     this.dishesCount = initialDishes;
